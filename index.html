@@ -5,13 +5,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Elisey</title>
-  <link rel="icon" href="https://img.icons8.com/fluency/96/joystick.png" type="image/png">
+  <link rel="icon" href="https://img.icons8.com/ios-filled/50/ffffff/user.png" type="image/png">
   <style>
     body {
       margin: 0;
       padding: 0;
+      background-color: #0a0a0a;
       font-family: 'Segoe UI', sans-serif;
-      background: linear-gradient(135deg, #1a1a1a, #2e2e2e);
       color: #e0e0e0;
       display: flex;
       flex-direction: column;
@@ -22,134 +22,90 @@
       overflow-x: hidden;
     }
 
-    .background-effect {
-      position: fixed;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background: radial-gradient(circle at 20% 20%, rgba(0,255,200,0.2), transparent),
-                  radial-gradient(circle at 80% 80%, rgba(255,0,150,0.15), transparent);
-      z-index: 0;
-      animation: moveBackground 20s ease-in-out infinite alternate;
-    }
-
-    @keyframes moveBackground {
-      0% {background-position: 0% 0%;}
-      100% {background-position: 100% 100%;}
-    }
-
     .container {
-      z-index: 1;
+      max-width: 100%;
       padding: 40px 20px;
-      border-radius: 16px;
-      background: rgba(255, 255, 255, 0.02);
-      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      border: 1px solid rgba(255, 255, 255, 0.05);
-      animation: fadeIn 1.5s ease-in;
-    }
-
-    @keyframes fadeIn {
-      from {opacity: 0; transform: translateY(20px);}
-      to {opacity: 1; transform: translateY(0);}
     }
 
     img.profile {
-      width: 180px;
-      height: 180px;
+      width: 220px;
+      height: 220px;
       border-radius: 50%;
       object-fit: cover;
-      border: 4px solid #00ffc8;
-      box-shadow: 0 0 20px rgba(0, 255, 200, 0.6);
-      margin-bottom: 20px;
+      border: 3px solid #333;
+      box-shadow: 0 0 40px rgba(100, 100, 100, 0.5);
+      margin-bottom: 30px;
     }
 
     h1 {
-      font-size: 32px;
-      color: #39ff14;
-      margin-bottom: 20px;
+      font-size: 38px;
+      margin-bottom: 40px;
+      color: #cccccc;
+      text-shadow: 0 0 8px rgba(120, 120, 120, 0.7), 0 0 15px rgba(100, 100, 100, 0.6);
     }
 
-    .contact a {
-      display: inline-block;
-      margin: 10px;
-      padding: 12px 24px;
-      border-radius: 40px;
-      text-decoration: none;
-      font-weight: bold;
-      color: white;
-      transition: all 0.3s ease;
-      position: relative;
-      z-index: 1;
+    .icons {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      margin-top: 20px;
     }
 
-    .contact a::before {
-      content: "";
-      position: absolute;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      border-radius: 40px;
-      background: inherit;
-      filter: brightness(1.2);
-      opacity: 0;
-      transition: opacity 0.3s ease;
-      z-index: -1;
-    }
-
-    .contact a:hover::before {
-      opacity: 1;
-      box-shadow: 0 0 20px rgba(255,255,255,0.3);
-    }
-
-    .insta { background: #ff0055; }
-    .email { background: #0055ff; }
-
-    .tg-icon {
-      display: inline-block;
-      margin: 10px;
-      width: 52px;
-      height: 52px;
+    .icons a {
+      width: 60px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #1a1a1a;
       border-radius: 50%;
-      overflow: hidden;
-      transition: transform 0.3s ease;
+      transition: box-shadow 0.3s ease, transform 0.3s ease;
+      box-shadow: 0 0 10px rgba(80, 80, 80, 0.6);
     }
 
-    .tg-icon:hover {
+    .icons a:hover {
       transform: scale(1.1);
+      box-shadow: 0 0 20px rgba(150, 150, 150, 0.7), 0 0 30px rgba(120, 120, 120, 0.6);
     }
 
-    .tg-icon img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
+    .icons img {
+      width: 32px;
+      height: 32px;
+      filter: brightness(0.9);
     }
 
     @media (max-width: 600px) {
-      .container {
-        padding: 30px 15px;
+      img.profile {
+        width: 160px;
+        height: 160px;
       }
 
       h1 {
-        font-size: 24px;
+        font-size: 28px;
       }
 
-      img.profile {
-        width: 140px;
-        height: 140px;
+      .icons a {
+        width: 50px;
+        height: 50px;
+      }
+
+      .icons img {
+        width: 24px;
+        height: 24px;
       }
     }
   </style>
 </head>
 <body>
-  <div class="background-effect"></div>
   <div class="container">
     <img src="photo.jpg" alt="Elisey" class="profile">
     <h1>Hi, I'm Elisey</h1>
-    <div class="contact">
-      <a class="insta" href="https://www.instagram.com/sun__60__" target="_blank">Instagram</a>
-      <a class="email" href="mailto:kotovelisha60@gmail.com">Email</a>
-      <a class="tg-icon" href="photo_qr.jpg" target="_blank" title="Telegram QR">
-        <img src="photo_qr.jpg" alt="Telegram QR">
+    <div class="icons">
+      <a href="https://www.instagram.com/sun__60__" target="_blank">
+        <img src="https://img.icons8.com/ios-filled/50/ffffff/instagram-new.png" alt="Instagram">
+      </a>
+      <a href="mailto:kotovelisha60@gmail.com">
+        <img src="https://img.icons8.com/ios-filled/50/ffffff/new-post.png" alt="Email">
       </a>
     </div>
   </div>
